@@ -44,3 +44,4 @@ cconfig.h
 CMakeLists.txt
 build
 cmake-build-debug
+.idea

@@ -28,6 +28,9 @@ elif CROSS_TOOL == 'iar':
 if os.getenv('RTT_EXEC_PATH'):
     EXEC_PATH = os.getenv('RTT_EXEC_PATH')
 
+# env的gcc太旧了
+EXEC_PATH = r'C:\Softwares\xpack-arm-none-eabi-gcc-12.2.1-1.2\bin'
+
 BUILD = 'debug'
 
 if PLATFORM == 'gcc':
@@ -58,7 +61,8 @@ if PLATFORM == 'gcc':
         CFLAGS += ' -O2'
 
     CXXFLAGS = CFLAGS
-    CFLAGS += ' -std=c99'
+    CFLAGS += ' -std=gnu11'
+    CXXFLAGS += ' -std=gnu++20 -fno-rtti -fno-exceptions'
 
     POST_ACTION = OBJCPY + ' -O binary $TARGET rtthread.bin\n' + SIZE + ' $TARGET \n'
 

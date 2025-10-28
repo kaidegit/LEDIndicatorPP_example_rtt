@@ -1,0 +1,3 @@
+[submodule "LEDIndicatorPP"]
+	path = LEDIndicatorPP
+	url = https://github.com/kaidegit/LEDIndicatorPP
